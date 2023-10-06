@@ -1,0 +1,23 @@
+body {
+  background-color: #11AD4B;
+  padding: 25px;
+}
+
+body > button, a {
+  background-color: #32FA7B;
+  color: #222;
+  box-shadow: 6px 6px #444;
+
+  border: none;
+  font-size: 12pt;
+  padding: 8px 24px;
+
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body > video {
+  width: 100%;
+  padding-bottom: 25px;
+}
