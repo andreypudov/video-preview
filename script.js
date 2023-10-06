@@ -16,6 +16,7 @@ const addVideo = () => {
   video.controls = false;
   video.autoplay = true;
   video.loop = true;
+  video.playsInline = true;
 
   button.after(video);
 }
