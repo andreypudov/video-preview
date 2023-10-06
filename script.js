@@ -1,4 +1,4 @@
-const muteVideos = async () => {
+const muteVideos = () => {
   const videos = document.querySelectorAll('video');
 
   videos.forEach(video => {
@@ -6,8 +6,8 @@ const muteVideos = async () => {
   });
 }
 
-const addVideo = async () => {
-  await muteVideos();
+const addVideo = () => {
+  muteVideos();
 
   const button = document.querySelector('button');
   const video = document.createElement('video');
