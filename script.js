@@ -1,4 +1,15 @@
+const muteVideos = async () => {
+  const videos = document.querySelectorAll('video');
+
+  videos.forEach(video => {
+    video.muted = true;
+  });
+}
+
 const addVideo = async () => {
+  await muteVideos();
+
+  const button = document.querySelector('button');
   const video = document.createElement('video');
 
   video.src = 'videos/2.mp4';
@@ -6,5 +17,5 @@ const addVideo = async () => {
   video.autoplay = true;
   video.loop = true;
 
-  document.body.appendChild(video);
+  button.after(video);
 }
