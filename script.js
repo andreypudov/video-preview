@@ -1,3 +1,4 @@
+const numberOfVideosPerRequest = 3;
 let videoFileIndex = 0;
 
 const muteVideos = () => {
@@ -10,7 +11,6 @@ const muteVideos = () => {
 
 const getNextVideoFile = () => {
   videoFileIndex = (videoFileIndex + 1) % 4;
-  console.log(videoFileIndex);
   return `../videos/${videoFileIndex}.mp4`
 }
 
@@ -34,7 +34,7 @@ const addVideo = () => {
 }
 
 const addVideos = () => {
-  for (let index = 0; index < 10; ++index) {
+  for (let index = 0; index < numberOfVideosPerRequest; ++index) {
     addVideo();
   }
 }
