@@ -1,3 +1,5 @@
+let videoFileIndex = 0;
+
 const muteVideos = () => {
   const videos = document.querySelectorAll('video');
 
@@ -6,37 +8,33 @@ const muteVideos = () => {
   });
 }
 
-const addVideo = () => {
-  muteVideos();
+const getNextVideoFile = () => {
+  videoFileIndex = (videoFileIndex + 1) % 4;
+  console.log(videoFileIndex);
+  return `../videos/${videoFileIndex}.mp4`
+}
 
-  const button = document.querySelector('button');
+const createVideo = () => {
   const video = document.createElement('video');
 
-  video.src = '../videos/2.mp4';
+  video.src = getNextVideoFile();
   video.controls = false;
   video.autoplay = true;
   video.loop = true;
   video.playsInline = true;
 
-  button.after(video);
+  return video;
+}
+
+const addVideo = () => {
+  muteVideos();
+
+  const video = createVideo();
+  document.body.appendChild(video);
 }
 
 const addVideos = () => {
   for (let index = 0; index < 10; ++index) {
     addVideo();
   }
-}
-
-const addVideoToBody = () => {
-  muteVideos();
-
-  const video = document.createElement('video');
-
-  video.src = '../videos/2.mp4';
-  video.controls = false;
-  video.autoplay = true;
-  video.loop = true;
-  video.playsInline = true;
-
-  document.body.appendChild(video)
 }
