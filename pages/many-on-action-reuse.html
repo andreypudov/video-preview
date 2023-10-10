@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Many on Action | Scroll - Video</title>
+    <title>Many on Action | Reuse - Video</title>
 
     <link rel="icon" type="image/png" href="../images/video.png" />
     <link rel = 'stylesheet' href = '../styles.css' />
 
-    <script src = '../script.js'></script>
+    <script src = '../script-reuse.js'></script>
   </head>
-  <body class = 'page'>
-    <button class = 'button default' onclick='addVideos()'>Add Videos</button>
+  <body class = 'page primary'>
+    <button class = 'button primary' onclick='addVideosWithReuse()'>Add Videos</button>
   </body>
   <script>
+    videoElement = createVideo();
+
     window.onscroll = function() {
       if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        addVideos();
+        addVideosWithReuse();
       }
     };
   </script>

@@ -61,3 +61,15 @@ body {
   width: 100%;
   padding-bottom: 25px;
 }
+
+.page > .video-wrapper {
+  width: 100%;
+  margin-bottom: 25px;
+  background-color: black;
+  aspect-ratio: 9/16;
+}
+
+.page > .video-wrapper > video {
+  width: 100%;
+  height: auto;
+}
