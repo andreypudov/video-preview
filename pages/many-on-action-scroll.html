@@ -16,7 +16,7 @@
   </body>
   <script>
     window.onscroll = function() {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         addVideos();
       }
     };
