@@ -1,9 +1,22 @@
 body {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
   background-color: #11AD4B;
-  padding: 25px;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
 }
 
-body > button, a {
+.logo {
+  width: 50%;
+  margin: 24px;
+}
+
+.button {
   background-color: #32FA7B;
   color: #222;
   box-shadow: 6px 6px #444;
@@ -12,12 +25,27 @@ body > button, a {
   font-size: 12pt;
   padding: 8px 24px;
 
+  text-align: center;
+  text-decoration: none;
+  width: 60%;
+  margin: 12px 0;
+}
+
+.page {
+  display: block;
+  padding: 25px;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.page > .button {
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-body > video {
+.page > video {
   width: 100%;
   padding-bottom: 25px;
 }
