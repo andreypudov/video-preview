@@ -24,6 +24,7 @@ const createWrapper = () => {
   const wrapper = document.createElement('div');
 
   wrapper.classList.add('video-wrapper');
+  wrapper.dataset.video = getNextVideoFile();
 
   return wrapper;
 }
@@ -37,7 +38,7 @@ const createObserver = (video) => {
   const callback = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        videoElement.src = getNextVideoFile();
+        videoElement.src = entry.target.dataset.video;
         videoElement.muted = false;
 
         entry.target.appendChild(videoElement);
