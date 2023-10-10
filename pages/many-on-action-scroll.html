@@ -11,5 +11,13 @@
     <script src = '../script.js'></script>
   </head>
   <body class = 'page'>
+    <button class = 'button' onclick='addVideos()'>Add Videos</button>
   </body>
+  <script>
+    window.onscroll = function(ev) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        addVideos();
+      }
+    };
+</script>
 </html>
