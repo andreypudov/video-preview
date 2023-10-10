@@ -20,3 +20,23 @@ const addVideo = () => {
 
   button.after(video);
 }
+
+const addVideos = () => {
+  for (let index = 0; index < 10; ++index) {
+    addVideo();
+  }
+}
+
+const addVideoToBody = () => {
+  muteVideos();
+
+  const video = document.createElement('video');
+
+  video.src = '../videos/2.mp4';
+  video.controls = false;
+  video.autoplay = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  document.body.appendChild(video)
+}
