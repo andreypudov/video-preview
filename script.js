@@ -33,7 +33,7 @@ const createObserver = (video) => {
     threshold: 1.0
   }
 
-  const callback = (entries, observer) => {
+  const callback = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         muteVideos();
@@ -44,7 +44,6 @@ const createObserver = (video) => {
   }
 
   const observer = new IntersectionObserver(callback, options);
-
   observer.observe(video);
 
   return observer;
@@ -60,6 +59,15 @@ const addVideos = () => {
   for (let index = 0; index < numberOfVideosPerRequest; ++index) {
     addVideo();
   }
+
+  /* make the first video play initially */
+  const videos = document.querySelectorAll('video');
+  if (videos.length === numberOfVideosPerRequest) {
+    setTimeout(() => {
+      muteVideos();
+      videos[0].muted = false;
+    }, 100);
+  }
 }
 
 const addVideosWithMore = (event) => {
@@ -72,6 +80,7 @@ const addVideosWithMore = (event) => {
   button.addEventListener('click', addVideosWithMore);
 
   document.body.appendChild(button);
-
-  event.target.remove();
+  if (event) {
+    event.target.remove();
+  }
 }
