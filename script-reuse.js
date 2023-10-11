@@ -10,7 +10,7 @@ const getNextVideoFile = () => {
 const createVideo = () => {
   const video = document.createElement('video');
 
-  video.src = '';
+  video.src = getNextVideoFile();
   video.controls = false;
   video.autoplay = true;
   video.loop = true;
@@ -63,4 +63,8 @@ const addVideosWithReuse = () => {
   for (let index = 0; index < numberOfVideosPerRequest; ++index) {
     addVideoWithReuse();
   }
+
+  const wrappers = document.querySelectorAll('.video-wrapper');
+  wrappers[0].appendChild(videoElement);
+  videoElement.muted = false;
 }
