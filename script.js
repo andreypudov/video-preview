@@ -1,5 +1,5 @@
 const numberOfVideosPerRequest = 3;
-let videoFileIndex = 0;
+let videoFileIndex = -1;
 
 const muteVideos = () => {
   const videos = document.querySelectorAll('video');

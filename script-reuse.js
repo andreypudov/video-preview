@@ -1,6 +1,6 @@
 const numberOfVideosPerRequest = 3;
 let videoElement;
-let videoFileIndex = 0;
+let videoFileIndex = -1;
 
 const getNextVideoFile = () => {
   videoFileIndex = (videoFileIndex + 1) % 4;
@@ -65,6 +65,8 @@ const addVideosWithReuse = () => {
   }
 
   const wrappers = document.querySelectorAll('.video-wrapper');
-  wrappers[0].appendChild(videoElement);
-  videoElement.muted = false;
+  if (wrappers.length === numberOfVideosPerRequest) {
+    wrappers[0].appendChild(videoElement);
+    videoElement.muted = false;
+  }
 }
